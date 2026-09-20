@@ -1,0 +1,21 @@
+INSTALLER HIFZ SUR ANDROID
+
+Cette version est une PWA installable :
+1. Mets le dossier sur un hébergement HTTPS (par exemple GitHub Pages, Netlify ou un autre hébergeur).
+2. Ouvre l'adresse dans Chrome sur Android.
+3. Menu ⋮ > "Installer l'application" ou "Ajouter à l'écran d'accueil".
+4. Hifz s'ouvre ensuite comme une application.
+
+Pour produire un vrai fichier APK signé, il faut ensuite empaqueter cette PWA avec Android Studio/Capacitor sur une machine disposant du SDK Android et de Gradle.
+
+FONCTIONS DE CETTE VERSION
+- 114 sourates
+- arabe + traduction française
+- audio
+- recherche
+- mémorisation
+- révision
+- progression
+- mode sombre
+- sauvegarde locale
+- installation comme application

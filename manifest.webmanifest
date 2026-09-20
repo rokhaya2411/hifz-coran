@@ -1,0 +1,12 @@
+{
+  "name": "Hifz • Coran",
+  "short_name": "Hifz",
+  "description": "Lire, écouter, mémoriser et réviser le Coran.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f8f6",
+  "theme_color": "#0d5c4a",
+  "lang": "fr",
+  "dir": "ltr",
+  "icons": []
+}

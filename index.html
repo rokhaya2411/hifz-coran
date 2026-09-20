@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d5c4a">
+  <title>Hifz • Lire & mémoriser le Coran</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span>☾</span><div><b>Hifz</b><small>Lire • Écouter • Mémoriser</small></div></div>
+  <button id="themeBtn" class="iconBtn" title="Mode sombre">☀️</button>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-page="home">Accueil</button>
+  <button class="tab" data-page="read">📖 Lire</button>
+  <button class="tab" data-page="memorize">🧠 Mémoriser</button>
+  <button class="tab" data-page="review">🔁 Réviser</button>
+  <button class="tab" data-page="progress">📊 Progression</button>
+</nav>
+
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <p class="arabicHero">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</p>
+    <h1>Ton compagnon pour le Hifz</h1>
+    <p>Lis, écoute, cache les versets, récite de mémoire et suis tes progrès.</p>
+    <button class="primary" onclick="go('read')">Commencer la lecture →</button>
+  </div>
+  <div class="cards">
+    <article class="card"><span>📖</span><h3>Lecture</h3><p>Les 114 sourates, texte arabe et traduction française.</p></article>
+    <article class="card"><span>🧠</span><h3>Mémorisation</h3><p>Cache les versets et marque ton niveau pour chaque ayah.</p></article>
+    <article class="card"><span>🎧</span><h3>Écoute</h3><p>Écoute la récitation et répète les versets autant que nécessaire.</p></article>
+    <article class="card"><span>📈</span><h3>Progression</h3><p>Ton avancement est enregistré automatiquement sur cet appareil.</p></article>
+  </div>
+</section>
+
+<section id="read" class="page">
+  <div class="sectionHead"><div><h2>📖 Lire le Coran</h2><p id="surahMeta">Choisis une sourate.</p></div>
+    <select id="surahSelect" aria-label="Choisir une sourate"></select>
+  </div>
+  <div class="toolbar">
+    <input id="searchInput" placeholder="Rechercher dans la traduction…">
+    <button class="secondary" id="searchBtn">Rechercher</button>
+    <button class="secondary" id="resetSearch">Réinitialiser</button>
+  </div>
+  <div id="reader" class="reader"><div class="loading">Chargement…</div></div>
+</section>
+
+<section id="memorize" class="page">
+  <div class="sectionHead"><div><h2>🧠 Mode mémorisation</h2><p>Lis, cache, récite, puis vérifie.</p></div>
+    <select id="memSurahSelect" aria-label="Choisir une sourate"></select>
+  </div>
+  <div class="memorizeBox">
+    <div class="memoryControls">
+      <button class="secondary" id="hideAll">👁️ Cacher tout</button>
+      <button class="secondary" id="showAll">👀 Afficher tout</button>
+      <button class="primary" id="listenMem">▶️ Écouter</button>
+    </div>
+    <div id="memoryReader" class="reader"></div>
+  </div>
+</section>
+
+<section id="review" class="page">
+  <div class="sectionHead"><div><h2>🔁 Révision</h2><p>Commence par les versets qui ont besoin de travail.</p></div></div>
+  <div id="reviewList" class="reviewList"></div>
+</section>
+
+<section id="progress" class="page">
+  <div class="sectionHead"><div><h2>📊 Ma progression</h2><p>Les données restent dans ton navigateur.</p></div></div>
+  <div class="progressCard">
+    <div class="bigProgress"><strong id="progressPercent">0%</strong><span>du Coran marqué mémorisé</span></div>
+    <div class="bar"><i id="progressBar"></i></div>
+    <div class="stats"><div><b id="memorizedCount">0</b><span>versets mémorisés</span></div><div><b id="reviewCount">0</b><span>à réviser</span></div><div><b>114</b><span>sourates</span></div></div>
+  </div>
+  <div id="surahProgress" class="surahGrid"></div>
+</section>
+</main>
+
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+<script>if("serviceWorker" in navigator) navigator.serviceWorker.register("./service-worker.js");</script>
+</body>
+</html>
